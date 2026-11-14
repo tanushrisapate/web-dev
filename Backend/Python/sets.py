@@ -1,0 +1,17 @@
+my_set = {1,2,3,4,5,2}
+print(my_set)
+
+print(len(my_set))
+for x in my_set:
+  print(x)
+
+my_set.discard(3)
+print(my_set)
+my_set.clear()
+my_set.add(7)
+my_set.update([1,8])
+print(my_set)
+
+
+my_tuple = (1,2,3,4,5)
+print(my_tuple)
