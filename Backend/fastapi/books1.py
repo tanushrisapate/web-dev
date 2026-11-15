@@ -21,7 +21,7 @@ async def read_book(book_title : str):
     for book in BOOKS:
        if book_title.casefold() == book.get('title').casefold():
           return book
-
+       
 @app.get("/books/")
 async def read_category_by_query(category : str):
    books_to_return =[]
@@ -29,6 +29,7 @@ async def read_category_by_query(category : str):
       if book.get('category').casefold() == category.casefold():
         books_to_return.append(book)
    return books_to_return
+
  
 @app.get("/books/{book_author}/")
 async def read_category_by_query(book_author : str,category : str):
@@ -42,7 +43,7 @@ async def read_category_by_query(book_author : str,category : str):
 async def create_book(new_book = Body()):
    BOOKS.append(new_book)
           
-@app.put("books/update_book")
+@app.put("/books/update_book")
 async def update_book(updated_book=Body()):
    for i in range (len(BOOKS)):
       if BOOKS[i].get('title').casefold() == updated_book.casefold():
